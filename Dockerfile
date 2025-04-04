@@ -10,9 +10,6 @@ RUN npm install
 # Copia el resto del código
 COPY frontend/ ./
 
-# ✅ Variable de entorno para Vite
-ENV VITE_API_URL=https://toolboxmattbackend-production.up.railway.app
-
 # Compila el frontend
 RUN npm run build
 
