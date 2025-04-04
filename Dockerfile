@@ -3,15 +3,13 @@ FROM node:18 as builder
 
 WORKDIR /app
 
-# Copiamos los archivos necesarios
 COPY frontend/package*.json ./
 RUN npm install
 
 COPY frontend/ ./
 
-# ⚠️ Inyectamos la variable manualmente durante el build
-ARG VITE_API_URL
-ENV VITE_API_URL=${VITE_API_URL}
+# 👇 IMPORTANTE: asegúrate de que esta línea esté justo después del COPY
+ENV VITE_API_URL=https://toolboxmattbackend-production.up.railway.app
 
 RUN npm run build
 
