@@ -1,0 +1,16 @@
+# Evita copiar cosas innecesarias al contenedor
+
+# Carpetas que no necesitas dentro del Docker
+node_modules
+dist
+venv
+.git
+.gitignore
+
+# Archivos comunes que solo ensucian el contenedor
+Dockerfile
+docker-compose.yml
+README.md
+rebuild.txt
+*.log
+*.env.local
