@@ -8,8 +8,8 @@ RUN npm install
 
 COPY frontend/ ./
 
-# 👇 Agrega la variable de entorno para que Vite la use en build
-ENV VITE_API_URL=https://toolboxmattbackend-production.up.railway.app
+# ✅ Usa la URL correcta del backend en Render
+ENV VITE_API_URL=https://toolbox-matt-backend.onrender.com
 
 RUN npm run build
 
