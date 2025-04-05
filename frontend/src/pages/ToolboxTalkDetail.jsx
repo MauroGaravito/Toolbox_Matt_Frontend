@@ -78,7 +78,7 @@ export default function ToolboxTalkDetail() {
     const documentIds = talk.documents.map((doc) => doc.id);
 
     try {
-      const res = await api.post(`/toolbox-talks/${id}/generate-index`, documentIds);
+      const res = await api.post(`/toolbox-talks/${id}/generate-index`, { document_ids: documentIds });
       alert(res.data.message || "✅ Index generated successfully!");
     } catch (err) {
       console.error("Error generating index:", err);
